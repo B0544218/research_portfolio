@@ -5,12 +5,11 @@
 
 # 本機端使用standfordcore 的openie服務
 
-'''
 要先下載 stanford-corenlp-4.0.0
 並且使用  java -mx4g -cp "*" edu.stanford.nlp.pipeline.StanfordCoreNLPServer -port 9000 -timeout 50000
 打開伺服器
 
-
+```
 from pycorenlp import *
 import pandas as pd
 from IPython import display
@@ -24,7 +23,6 @@ time = []
 #不能有str之外的資料
 count = 0
 for s in csv_f['tittle'] :
-	
 	output = nlp.annotate(s, properties={"annotators":"tokenize,ssplit,pos,depparse,natlog,openie","outputFormat": "json","triple.strict":"True",'openie.max_entailments_per_clause':'1000'})
 	for i in range (len(output['sentences'])):
 		result = [output["sentences"][i]["openie"] for item in output]
@@ -47,4 +45,4 @@ d = {'time':time,
 df = pd.DataFrame(data=d)
 df.to_csv("C://Users/88698/Desktop/openie_data.csv")
 
-'''
+```
