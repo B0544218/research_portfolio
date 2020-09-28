@@ -1,4 +1,5 @@
-# 練習使用yolo 並竄改source code 去得到bound box的 x,y,w,h
+# 練習train 一個yolo模型
+### 若要取得bound box的 x,y,w,h  (需竄改yolo的source code)
 - my_yolo_model 是負責訓練yolo
 - Copy_of_final 是實作
 ## 遊戲中的畫面
